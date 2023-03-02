@@ -25,7 +25,6 @@ if ($error = mysqli_error($koneksi)) {
     $data["pesan"] = $error;
 } else {
     $data["status"] = "success";
-    // $data["Data"] = $querydb;
     $data[] = mysqli_fetch_assoc($qry);
 }
 
