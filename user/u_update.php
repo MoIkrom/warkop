@@ -5,7 +5,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $hp = $_POST["hp"];
 
-//  mysqli_connect( "URL server" , "username" , "password" , "database")
+// syntax menyambungkan ke database = mysqli_connect( "URL server" , "username" , "password" , "database")
 $koneksi = mysqli_connect("localhost", "root", "", "db_tes_catatan2");
 
 
@@ -15,7 +15,7 @@ $data = array();
 // mysqli_query (koneksinya , SQL nya)
 $querydb = mysqli_query($koneksi, " UPDATE users SET `username` = '$username' , `password` = '$password' , `hp` = '$hp' where id_user = '$idUser' ");
 
-
+// Kondisi jika error / Berhasil
 if ($error = mysqli_error($koneksi)) {
     $data["status"] = "error";
     $data["pesan"] = $error;
@@ -23,4 +23,5 @@ if ($error = mysqli_error($koneksi)) {
     $data["status"] = "success Edit Data";
 }
 
+// menampilkan hasil / output
 echo (json_encode($data));
