@@ -7,7 +7,7 @@ $password = $_POST["password"];
 $koneksi = mysqli_connect("localhost", "root", "", "db_tes_catatan2");
 
 // mysqli_query (koneksinya , SQL nya)
-$sql = "SELECT id_user, username, hp, create_date FROM users where username='$username' and `password`='$password' ";
+$sql = "SELECT * FROM users where username='$username' and `password`='$password' ";
 $result = mysqli_query($koneksi, $sql);
 
 
